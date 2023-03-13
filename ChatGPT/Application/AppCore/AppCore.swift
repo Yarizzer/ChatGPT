@@ -14,6 +14,7 @@ class AppCore {
         self.appDatabaseManager = AppDatabaseManager()
         self.appDeviceManager = AppDeviceManager()
         self.appStyleManager = AppStyleManager()
+        self.appSpeechManager = AppSpeechManager()
     }
     
     func prepareSession() {
@@ -31,6 +32,7 @@ class AppCore {
     private let appDatabaseManager: AppDatabaseManageable
     private let appDeviceManager: AppDeviceManageable
     private let appStyleManager: AppStyleManageable
+    private let appSpeechManager: AppSpeechManageable
 }
 
 extension AppCore: AppCoreDeviceManageable {
@@ -43,4 +45,8 @@ extension AppCore: AppCoreDatabaseManageable {
 
 extension AppCore: AppCoreStyleManageable {
     var styleManager: AppStyleManageable { return appStyleManager }
+}
+
+extension AppCore: AppCoreSpeechManageable {
+    var speechManager: AppSpeechManageable { return appSpeechManager }
 }

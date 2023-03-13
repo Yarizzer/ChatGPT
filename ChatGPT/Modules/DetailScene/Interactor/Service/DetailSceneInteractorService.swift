@@ -7,7 +7,9 @@
 //
 
 protocol DetailSceneInteractorServiceType{
-	
+	func updateVolume(with value: Float)
+    func updatePitch(with value: Float)
+    func updateRate(with value: Float)
 }
 
 class DetailSceneInteractorService {
@@ -19,5 +21,15 @@ class DetailSceneInteractorService {
 }
 
 extension DetailSceneInteractorService: DetailSceneInteractorServiceType {
-	
+    func updateVolume(with value: Float) {
+        model.updateVolume(with: value)
+    }
+    
+    func updatePitch(with value: Float) {
+        model.updatePitch(with: value)
+    }
+    
+    func updateRate(with value: Float) {
+        model.updateRate(with: value)
+    }
 }

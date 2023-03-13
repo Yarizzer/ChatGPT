@@ -42,7 +42,7 @@ extension UIDevice {
     }
 }
 
-extension AppDeviceLayer {
+extension AppDeviceManager {
     private struct Constants {
         static let paddingValues = (top : (withNotch: 44.0, withoutNotch: 24.0),
                                     bottom : (withNotch: 34.0, withoutNotch: 0.0))

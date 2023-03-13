@@ -16,3 +16,7 @@ protocol AppCoreDeviceManageable {
 protocol AppCoreDatabaseManageable {
     var databaseManager: AppDatabaseManageable { get }
 }
+
+protocol AppCoreSpeechManageable {
+    var speechManager: AppSpeechManageable { get }
+}

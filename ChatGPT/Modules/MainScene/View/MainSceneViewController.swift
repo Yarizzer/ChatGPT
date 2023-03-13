@@ -28,7 +28,7 @@ class MainSceneViewController: BaseViewController<MainSceneInteractable> {
     }
 	
 	private func setup() {
-        topViewPaddingConstraint.constant = (AppCore.shared.deviceManager.hasTopNotch ? Constants.topConstraintValueWithNotch : Constants.topConstraintValueWithoutNotch)
+        topViewPaddingConstraint.constant = AppCore.shared.deviceManager.topPaddingValue
         
 		interactor?.makeRequest(requestType: .initialSetup)
 	}

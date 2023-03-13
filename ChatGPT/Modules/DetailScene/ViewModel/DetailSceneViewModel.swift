@@ -7,7 +7,11 @@
 //
 
 protocol DetailSceneViewModelType {
-	
+    var text: String { get }
+    
+    func updateVolume(with value: Float)
+    func updatePitch(with value: Float)
+    func updateRate(with value: Float)
 }
 
 class DetailSceneViewModel {
@@ -19,5 +23,17 @@ class DetailSceneViewModel {
 }
 
 extension DetailSceneViewModel: DetailSceneViewModelType {
-	
+    var text: String { return data.content }
+    
+    func updateVolume(with value: Float) {
+        AppCore.shared.speechManager.setVolume(with: value)
+    }
+    
+    func updatePitch(with value: Float) {
+        AppCore.shared.speechManager.setPitch(with: value)
+    }
+    
+    func updateRate(with value: Float) {
+        AppCore.shared.speechManager.setRate(with: value)
+    }
 }
