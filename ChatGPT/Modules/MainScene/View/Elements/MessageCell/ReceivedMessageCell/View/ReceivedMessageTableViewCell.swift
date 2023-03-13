@@ -47,15 +47,6 @@ class ReceivedMessageTableViewCell: UITableViewCell {
         
         contentTV.textColor = AppCore.shared.styleManager.colorDarkGray
         contentTV.font = AppCore.shared.styleManager.labelTitleFontMedium
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(copyText))
-        tapGesture.numberOfTapsRequired = 2
-        
-        self.addGestureRecognizer(tapGesture)
-    }
-    
-    @objc private func copyText() {
-        UIPasteboard.general.string = contentTV.text
     }
     
     private var viewModel: MessageTableViewCellViewModelType?
