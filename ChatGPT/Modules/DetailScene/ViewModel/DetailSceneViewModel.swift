@@ -9,11 +9,7 @@
 protocol DetailSceneViewModelType {
     var text: String { get }
     
-    func updateVolume(with value: Float)
-    func updatePitch(with value: Float)
-    func updateRate(with value: Float)
-    func startTalk()
-    func silence()
+    func update(with type: DetailSceneVMSpeechRequest)
 }
 
 class DetailSceneViewModel {
@@ -27,23 +23,14 @@ class DetailSceneViewModel {
 extension DetailSceneViewModel: DetailSceneViewModelType {
     var text: String { return data.content }
     
-    func updateVolume(with value: Float) {
-        AppCore.shared.speechManager.setVolume(with: value)
-    }
-    
-    func updatePitch(with value: Float) {
-        AppCore.shared.speechManager.setPitch(with: value)
-    }
-    
-    func updateRate(with value: Float) {
-        AppCore.shared.speechManager.setRate(with: value)
-    }
-    
-    func startTalk() {
-        AppCore.shared.speechManager.speak(with: data.content)
-    }
-    
-    func silence() {
-        AppCore.shared.speechManager.pause()
+    func update(with type: DetailSceneVMSpeechRequest) {
+        switch type {
+        case .startTalk: AppCore.shared.speechManager.invoke(action: .speak(with: data.content))
+        case .stop: AppCore.shared.speechManager.invoke(action: .stop)
+        case .pause: AppCore.shared.speechManager.invoke(action: .pause)
+        case .updateVolume(let volume): AppCore.shared.speechManager.invoke(action: .setVolume(withValue: volume))
+        case .updateRate(let rate): AppCore.shared.speechManager.invoke(action: .setRate(withValue: rate))
+        case .updatePitch(let pitch): AppCore.shared.speechManager.invoke(action: .setPitch(withValue: pitch))
+        }
     }
 }

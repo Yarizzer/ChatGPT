@@ -80,6 +80,8 @@
 		71155DB829BF3F2A00E20AAF /* DetailScenePresenterContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71155DAC29BF3F2A00E20AAF /* DetailScenePresenterContract.swift */; };
 		71155DB929BF3F2A00E20AAF /* DetailScenePresenterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71155DAD29BF3F2A00E20AAF /* DetailScenePresenterService.swift */; };
 		71155DC229BF403900E20AAF /* CircleTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71155DC129BF403900E20AAF /* CircleTransitionAnimator.swift */; };
+		712C181A29BF899B00EF1DD7 /* AppSpeechManagerContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712C181929BF899B00EF1DD7 /* AppSpeechManagerContract.swift */; };
+		712C181C29BF8D3D00EF1DD7 /* DetailSceneViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712C181B29BF8D3D00EF1DD7 /* DetailSceneViewModelContract.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -157,6 +159,8 @@
 		71155DAC29BF3F2A00E20AAF /* DetailScenePresenterContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScenePresenterContract.swift; sourceTree = "<group>"; };
 		71155DAD29BF3F2A00E20AAF /* DetailScenePresenterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScenePresenterService.swift; sourceTree = "<group>"; };
 		71155DC129BF403900E20AAF /* CircleTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTransitionAnimator.swift; sourceTree = "<group>"; };
+		712C181929BF899B00EF1DD7 /* AppSpeechManagerContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSpeechManagerContract.swift; sourceTree = "<group>"; };
+		712C181B29BF8D3D00EF1DD7 /* DetailSceneViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSceneViewModelContract.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -645,6 +649,7 @@
 			children = (
 				71155D9D29BF2FF100E20AAF /* AppSpeechManager.swift */,
 				71155D9F29BF302600E20AAF /* AppSpeechManageable.swift */,
+				712C181929BF899B00EF1DD7 /* AppSpeechManagerContract.swift */,
 			);
 			path = SpeechManager;
 			sourceTree = "<group>";
@@ -695,6 +700,7 @@
 			isa = PBXGroup;
 			children = (
 				71155DA929BF3F2A00E20AAF /* DetailSceneViewModel.swift */,
+				712C181B29BF8D3D00EF1DD7 /* DetailSceneViewModelContract.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -823,6 +829,7 @@
 				71155DB329BF3F2A00E20AAF /* DetailSceneInteractorService.swift in Sources */,
 				11AAC8F0297A5FC000CBE460 /* AppStyleManager.swift in Sources */,
 				71155DAE29BF3F2A00E20AAF /* DetailScenePresenter.swift in Sources */,
+				712C181A29BF899B00EF1DD7 /* AppSpeechManagerContract.swift in Sources */,
 				71155DB929BF3F2A00E20AAF /* DetailScenePresenterService.swift in Sources */,
 				11AAC945297A73D700CBE460 /* TableViewProviderType.swift in Sources */,
 				11AAC90E297A67A100CBE460 /* InitialSceneRouter.swift in Sources */,
@@ -830,6 +837,7 @@
 				71155DB129BF3F2A00E20AAF /* DetailSceneViewController.swift in Sources */,
 				11AAC934297A6D1A00CBE460 /* MainSceneViewController.swift in Sources */,
 				11AAC8F2297A5FDA00CBE460 /* AppStyleManageable.swift in Sources */,
+				712C181C29BF8D3D00EF1DD7 /* DetailSceneViewModelContract.swift in Sources */,
 				11AAC8E5297A5F0100CBE460 /* AppCore.swift in Sources */,
 				11AAC932297A6D1A00CBE460 /* MainSceneInteractorService.swift in Sources */,
 				11AAC965297AAA0900CBE460 /* Publisher + Subscriber.swift in Sources */,

@@ -20,7 +20,6 @@ class DetailSceneViewController: BaseViewController<DetailSceneInteractable> {
 		interactor?.makeRequest(requestType: .initialSetup)
         
         topPaddingConstraint.constant = AppCore.shared.deviceManager.topPaddingValue
-        
 	}
     
     @IBAction private func backButtonAction(_ sender: UIButton) {
@@ -28,27 +27,26 @@ class DetailSceneViewController: BaseViewController<DetailSceneInteractable> {
     }
     
     @IBAction private func volumeSliderAction(_ sender: UISlider) {
-        interactor?.makeRequest(requestType: .updateVolume(with: sender.value))
+        interactor?.makeRequest(requestType: .update(with: .updateVolume(with: sender.value)))
     }
     
     @IBAction private func pitchSliderAction(_ sender: UISlider) {
-        interactor?.makeRequest(requestType: .updatePitch(with: sender.value))
+        interactor?.makeRequest(requestType: .update(with: .updatePitch(with: sender.value)))
     }
     
     @IBAction private func rateSliderAction(_ sender: UISlider) {
-        interactor?.makeRequest(requestType: .updateRate(with: sender.value))
+        interactor?.makeRequest(requestType: .update(with: .updateRate(with: sender.value)))
     }
     
     @IBAction private func talkButtonAction(_ sender: UIButton) {
-        interactor?.makeRequest(requestType: .startTalk)
+        interactor?.makeRequest(requestType: .update(with: .startTalk))
     }
     
     @IBAction private func silenceButtonAction(_ sender: UIButton) {
-        interactor?.makeRequest(requestType: .silence)
+        interactor?.makeRequest(requestType: .update(with: .pause))
     }
     
     @IBOutlet private weak var topPaddingConstraint: NSLayoutConstraint!
-    
     @IBOutlet private weak var textView: UITextView!
 }
 
@@ -62,7 +60,5 @@ extension DetailSceneViewController: DetailSceneViewControllerType {
 }
 
 extension DetailSceneViewController {
-	private struct Constants {
-        
-	}
+	private struct Constants { }
 }

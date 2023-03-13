@@ -13,21 +13,18 @@ class DetailSceneInteractor {
 		self.service = service
 	}
 
-	private var router: DetailSceneRoutable
-	private var presenter: DetailScenePresentable
-	private var service: DetailSceneInteractorServiceType
+	private let router: DetailSceneRoutable
+	private let presenter: DetailScenePresentable
+	private let service: DetailSceneInteractorServiceType
 }
 
 extension DetailSceneInteractor: DetailSceneInteractable {
 	func makeRequest(requestType: DetailSceneInteractorRequest.RequestType) {
 		switch requestType {
 		case .initialSetup: presenter.response(responseType: .initialSetup)
-        case .updateVolume(let value): service.updateVolume(with: value)
-        case .updatePitch(let value): service.updatePitch(with: value)
-        case .updateRate(let value): service.updateRate(with: value)
-        case .startTalk: service.startTalk()
-        case .silence: service.silence()
+        case .update(let request): service.update(with: request)
         case .dismiss:
+            service.update(with: .stop)
             presenter.response(responseType: .releaseView)
             router.dismiss()
 		}

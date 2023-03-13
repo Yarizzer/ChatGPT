@@ -13,11 +13,7 @@ protocol DetailSceneInteractable {
 struct DetailSceneInteractorRequest {
 	enum RequestType {
 		case initialSetup
-        case updateVolume(with: Float)
-        case updatePitch(with: Float)
-        case updateRate(with: Float)
-        case startTalk
-        case silence
+        case update(with: DetailSceneVMSpeechRequest)
         case dismiss
 	}
 }

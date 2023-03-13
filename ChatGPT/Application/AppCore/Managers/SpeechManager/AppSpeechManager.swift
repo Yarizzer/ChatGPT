@@ -10,35 +10,28 @@ import Speech
 class AppSpeechManager {
     init() {
         self.synth = AVSpeechSynthesizer()
-        self.utterence = AVSpeechUtterance()
+        self.utterance = AVSpeechUtterance()
         
-        utterence.voice = AVSpeechSynthesisVoice(language: Constants.voiceKey)
+        utterance.voice = AVSpeechSynthesisVoice(language: Constants.voiceKey)
     }
     
     private let synth: AVSpeechSynthesizer
-    private var utterence: AVSpeechUtterance
+    private var utterance: AVSpeechUtterance
 }
 
 extension AppSpeechManager: AppSpeechManageable {
-    func setRate(with value: Float) {
-        //utterence.setRate(with: value)
+    func invoke(action: AppSpeechManagerActionType) {
+        switch action {
+        case .speak(let data):
+            utterance = AVSpeechUtterance(string: data)
+            synth.speak(utterance)
+        case .stop: synth.stopSpeaking(at: .word)
+        case .pause: synth.pauseSpeaking(at: .word)
+        case .setVolume(let value): utterance.volume = value
+        case .setPitch(let value): utterance.pitchMultiplier = value
+        case .setRate(let value): utterance.rate = value
+        }
     }
-    
-    func setVolume(with value: Float) {
-        //utterence.volume.setVolume(with: value)
-    }
-    
-    func setPitch(with multiplier: Float) {
-        //utterence.setPitch(with: multiplier)
-    }
-    
-    func speak(with data: String) {
-        utterence = AVSpeechUtterance(string: data)
-        synth.speak(utterence)
-    }
-    
-    func pause() { synth.pauseSpeaking(at: .word) }
-    func stop() { synth.stopSpeaking(at: .word) }
 }
 
 extension AppSpeechManager {

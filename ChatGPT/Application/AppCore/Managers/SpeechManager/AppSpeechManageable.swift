@@ -6,11 +6,5 @@
 //
 
 protocol AppSpeechManageable {
-    func setRate(with value: Float)
-    func setVolume(with value: Float)
-    func setPitch(with multiplier: Float)
-    
-    func speak(with data: String)
-    func pause()
-    func stop()
+    func invoke(action: AppSpeechManagerActionType)
 }

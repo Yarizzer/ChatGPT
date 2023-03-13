@@ -38,7 +38,7 @@ extension AppChatGPTManager: AppChatGPTManageable {
 
 extension AppChatGPTManager {
     private struct Constants {
-        static let APIKey = "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"
+        static let APIKey = ""
         static let maxTokensValue = 1500
     }
 }
