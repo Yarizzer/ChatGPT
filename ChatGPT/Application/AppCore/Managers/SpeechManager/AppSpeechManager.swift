@@ -44,7 +44,7 @@ extension AppSpeechManager: AppSpeechManageable {
 extension AppSpeechManager {
     private struct Constants {
         static let initialDataValue = ""
-        static let initialRateValue: Float = 1.0
+        static let initialRateValue: Float = 0.5
         static let voiceKey = "ru-RU"
     }
 }
