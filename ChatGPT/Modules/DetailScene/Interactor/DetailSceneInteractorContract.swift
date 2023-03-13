@@ -13,5 +13,6 @@ protocol DetailSceneInteractable {
 struct DetailSceneInteractorRequest {
 	enum RequestType {
 		case initialSetup
+        case dismiss
 	}
 }

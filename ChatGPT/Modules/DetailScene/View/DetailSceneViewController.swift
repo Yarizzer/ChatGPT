@@ -19,6 +19,10 @@ class DetailSceneViewController: BaseViewController<DetailSceneInteractable> {
 	private func setup() {
 		interactor?.makeRequest(requestType: .initialSetup)
 	}
+    
+    @IBAction private func backButtonAction(_ sender: UIButton) {
+        interactor?.makeRequest(requestType: .dismiss)
+    }
 }
 
 extension DetailSceneViewController: DetailSceneViewControllerType {

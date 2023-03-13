@@ -115,9 +115,7 @@ extension MainSceneViewController: MainSceneViewControllerType {
             }
             
             tableViewProvider?.onSelectCell = { [weak self] indexPath in
-                
-                print(indexPath)
-                
+                self?.interactor?.makeRequest(requestType: .didSelectCell(with: indexPath.row))
             }
         case .reloadProviderData(let model):
             tableViewProvider?.reloadData() { [weak self] in
@@ -130,6 +128,16 @@ extension MainSceneViewController: MainSceneViewControllerType {
             self.newMessageContent.text = ""
 		}
 	}
+}
+
+extension MainSceneViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return CircleShapeTransitionAnimator(isPresenting: true, transitionPoint: self.view.center)
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return CircleShapeTransitionAnimator(isPresenting: false, transitionPoint: self.view.center)
+    }
 }
 
 extension MainSceneViewController {

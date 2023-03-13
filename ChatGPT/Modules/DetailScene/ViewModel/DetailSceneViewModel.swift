@@ -11,7 +11,11 @@ protocol DetailSceneViewModelType {
 }
 
 class DetailSceneViewModel {
-	
+    init(with data: MessageModel) {
+        self.data = data
+    }
+    
+    private let data: MessageModel
 }
 
 extension DetailSceneViewModel: DetailSceneViewModelType {

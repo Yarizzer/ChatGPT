@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_0" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -24,6 +22,14 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F0S-sf-IKf" userLabel="Header View">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                             <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lz6-RA-KxZ">
+                                    <rect key="frame" x="10" y="5" width="62" height="50"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                    <connections>
+                                        <action selector="backButtonAction:" destination="-1" eventType="touchUpInside" id="mO6-Ko-blL"/>
+                                    </connections>
+                                </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Заголовок" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxU-2E-fKU">
                                     <rect key="frame" x="120.5" y="32.5" width="79" height="19.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -31,10 +37,13 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                             <constraints>
+                                <constraint firstItem="Lz6-RA-KxZ" firstAttribute="top" secondItem="F0S-sf-IKf" secondAttribute="top" constant="5" id="9uV-Ee-N8t"/>
+                                <constraint firstItem="Lz6-RA-KxZ" firstAttribute="leading" secondItem="F0S-sf-IKf" secondAttribute="leading" constant="10" id="Di1-ZG-2bJ"/>
                                 <constraint firstItem="bxU-2E-fKU" firstAttribute="centerX" secondItem="F0S-sf-IKf" secondAttribute="centerX" id="FeU-h8-Iuw"/>
                                 <constraint firstAttribute="height" constant="60" id="LeU-EW-ZYM"/>
+                                <constraint firstAttribute="bottom" secondItem="Lz6-RA-KxZ" secondAttribute="bottom" constant="5" id="Z1X-0S-h0b"/>
                                 <constraint firstAttribute="bottom" secondItem="bxU-2E-fKU" secondAttribute="bottom" constant="8" id="a4P-Jc-rij"/>
                             </constraints>
                         </view>
@@ -61,4 +70,9 @@
             <point key="canvasLocation" x="462" y="399"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

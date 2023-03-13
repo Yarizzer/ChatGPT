@@ -10,6 +10,7 @@ protocol MainSceneInteractorServiceType{
     func setupSubscription()
 	func sendMessage(with content: String)
     func clearChat()
+    func getMessageModel(for index: Int) -> MessageModel?
 }
 
 class MainSceneInteractorService {
@@ -31,5 +32,9 @@ extension MainSceneInteractorService: MainSceneInteractorServiceType {
     
     func clearChat() {
         model.clearChat()
+    }
+    
+    func getMessageModel(for index: Int) -> MessageModel? {
+        return model.getMessageData(for: index)
     }
 }

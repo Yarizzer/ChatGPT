@@ -11,14 +11,16 @@ import AVFoundation
 class AppDeviceManager: AppDeviceManageable {
     var screenSize: CGRect { return UIScreen.main.bounds }
     
-    var hasTopNotch: Bool {
-        if #available(iOS 11.0, tvOS 11.0, *) {
-            // with notch: 44.0 on iPhone X, XS, XS Max, XR.
-            // without notch: 24.0 on iPad Pro 12.9" 3rd generation, 20.0 on iPhone 8 on iOS 12+.
-            return UIApplication.shared.delegate?.window??.safeAreaInsets.top ?? 0 > 24
-        }
-
-        return false
+    var topPaddingValue: CGFloat {
+        guard (UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.safeAreaInsets.top ?? 0) > 24 else { return Constants.paddingValues.top.withoutNotch }
+            
+        return Constants.paddingValues.top.withNotch
+    }
+    
+    var bottomPaddingValue: CGFloat {
+        guard (UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.safeAreaInsets.bottom ?? 0) > 0 else { return Constants.paddingValues.bottom.withoutNotch }
+        
+        return Constants.paddingValues.bottom.withNotch
     }
     
     func generateSuccessFeedback() {
@@ -39,3 +41,11 @@ extension UIDevice {
         AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
     }
 }
+
+extension AppDeviceLayer {
+    private struct Constants {
+        static let paddingValues = (top : (withNotch: 44.0, withoutNotch: 24.0),
+                                    bottom : (withNotch: 34.0, withoutNotch: 0.0))
+    }
+}
+

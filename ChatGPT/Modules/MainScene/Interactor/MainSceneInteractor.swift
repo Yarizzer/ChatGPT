@@ -28,6 +28,10 @@ extension MainSceneInteractor: MainSceneInteractable {
             service.sendMessage(with: content)
             presenter.response(responseType: .setViewToInitialState)
         case .clearChat: service.clearChat()
+        case .didSelectCell(let index):
+            guard let data = service.getMessageModel(for: index) else { return }
+            
+            router.routeTo(scene: .detailScene(withData: data))
 		}
 	}
 }

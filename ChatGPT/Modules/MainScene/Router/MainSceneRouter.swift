@@ -16,10 +16,8 @@ protocol MainSceneRoutable {
 class MainSceneRouter {
 	private func prepareDestinationScene(with type: MainSceneRoutableContractData.MainSceneRoutableSceneType) -> UIViewController {
 		switch type {
-		case .testScene: print("\(self) \(#function) msg: 'Test scene'")
+        case .detailScene(let data): return DetailSceneRouter.assembly(with: data)
 		}
-		
-		return UIViewController()
 	}
 	
 	private weak var view: MainSceneViewController?
@@ -49,7 +47,7 @@ extension MainSceneRouter: MainSceneRoutable {
 	func routeTo(scene type: MainSceneRoutableContractData.MainSceneRoutableSceneType) {
 		let vc = prepareDestinationScene(with: type)
 		vc.modalPresentationStyle = .currentContext
-		//vc.transitioningDelegate = view       //Setup custom transition here
+		vc.transitioningDelegate = view       //Setup custom transition here
 		self.view?.present(vc, animated: true)
 	}
 }

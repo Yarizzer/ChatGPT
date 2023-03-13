@@ -15,5 +15,6 @@ struct MainSceneInteractorRequest {
 		case initialSetup
         case sendMessage(with: String)
         case clearChat
+        case didSelectCell(with: Int)
 	}
 }

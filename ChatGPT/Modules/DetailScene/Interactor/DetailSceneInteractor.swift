@@ -22,6 +22,9 @@ extension DetailSceneInteractor: DetailSceneInteractable {
 	func makeRequest(requestType: DetailSceneInteractorRequest.RequestType) {
 		switch requestType {
 		case .initialSetup: presenter.response(responseType: .initialSetup)
+        case .dismiss:
+            presenter.response(responseType: .releaseView)
+            router.dismiss()
 		}
 	}
 }

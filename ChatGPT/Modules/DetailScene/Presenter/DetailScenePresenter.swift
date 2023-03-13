@@ -13,7 +13,7 @@ class DetailScenePresenter {
 	}
 	
 	private var viewController: DetailSceneViewControllerType?
-	private var service: DetailScenePresenterServiceType
+	private let service: DetailScenePresenterServiceType
 }
 
 extension DetailScenePresenter: DetailScenePresentable {
@@ -22,7 +22,7 @@ extension DetailScenePresenter: DetailScenePresentable {
 		
 		switch responseType {
 		case .initialSetup: viewController?.update(viewModelDataType: .initialSetup(with: model))
-		case .releaseView: self?.viewController = nil
+		case .releaseView: self.viewController = nil
 		}
 	}
 }

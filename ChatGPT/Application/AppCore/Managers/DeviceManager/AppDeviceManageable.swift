@@ -9,7 +9,8 @@ import UIKit
 
 protocol AppDeviceManageable {
     var screenSize: CGRect { get }
-    var hasTopNotch: Bool { get }
+    var topPaddingValue: CGFloat { get }
+    var bottomPaddingValue: CGFloat { get }
     
     func generateSuccessFeedback()
     func generateFailureFeedback()

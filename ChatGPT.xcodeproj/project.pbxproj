@@ -69,7 +69,6 @@
 		71155D9E29BF2FF100E20AAF /* AppSpeechManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71155D9D29BF2FF100E20AAF /* AppSpeechManager.swift */; };
 		71155DA029BF302600E20AAF /* AppSpeechManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71155D9F29BF302600E20AAF /* AppSpeechManageable.swift */; };
 		71155DAE29BF3F2A00E20AAF /* DetailScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71155DA229BF3F2A00E20AAF /* DetailScenePresenter.swift */; };
-		71155DAF29BF3F2A00E20AAF /* DetailSceneRouterContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71155DA329BF3F2A00E20AAF /* DetailSceneRouterContract.swift */; };
 		71155DB029BF3F2A00E20AAF /* DetailSceneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71155DA429BF3F2A00E20AAF /* DetailSceneRouter.swift */; };
 		71155DB129BF3F2A00E20AAF /* DetailSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71155DA529BF3F2A00E20AAF /* DetailSceneViewController.swift */; };
 		71155DB229BF3F2A00E20AAF /* DetailSceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71155DA629BF3F2A00E20AAF /* DetailSceneInteractor.swift */; };
@@ -147,7 +146,6 @@
 		71155D9D29BF2FF100E20AAF /* AppSpeechManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSpeechManager.swift; sourceTree = "<group>"; };
 		71155D9F29BF302600E20AAF /* AppSpeechManageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSpeechManageable.swift; sourceTree = "<group>"; };
 		71155DA229BF3F2A00E20AAF /* DetailScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScenePresenter.swift; sourceTree = "<group>"; };
-		71155DA329BF3F2A00E20AAF /* DetailSceneRouterContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSceneRouterContract.swift; sourceTree = "<group>"; };
 		71155DA429BF3F2A00E20AAF /* DetailSceneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSceneRouter.swift; sourceTree = "<group>"; };
 		71155DA529BF3F2A00E20AAF /* DetailSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSceneViewController.swift; sourceTree = "<group>"; };
 		71155DA629BF3F2A00E20AAF /* DetailSceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSceneInteractor.swift; sourceTree = "<group>"; };
@@ -322,9 +320,9 @@
 		11AAC8FB297A653900CBE460 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				71155DA129BF3F1700E20AAF /* DetailScene */,
 				11AAC901297A678700CBE460 /* InitialScene */,
 				11AAC91F297A6D0400CBE460 /* MainScene */,
+				71155DA129BF3F1700E20AAF /* DetailScene */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -666,9 +664,9 @@
 		71155DBA29BF3F3400E20AAF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				71155DAB29BF3F2A00E20AAF /* DetailSceneViewControllerContract.swift */,
 				71155DA529BF3F2A00E20AAF /* DetailSceneViewController.swift */,
 				71155DAA29BF3F2A00E20AAF /* DetailSceneViewController.xib */,
+				71155DAB29BF3F2A00E20AAF /* DetailSceneViewControllerContract.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -705,7 +703,6 @@
 			isa = PBXGroup;
 			children = (
 				71155DA429BF3F2A00E20AAF /* DetailSceneRouter.swift */,
-				71155DA329BF3F2A00E20AAF /* DetailSceneRouterContract.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -834,7 +831,6 @@
 				11AAC934297A6D1A00CBE460 /* MainSceneViewController.swift in Sources */,
 				11AAC8F2297A5FDA00CBE460 /* AppStyleManageable.swift in Sources */,
 				11AAC8E5297A5F0100CBE460 /* AppCore.swift in Sources */,
-				71155DAF29BF3F2A00E20AAF /* DetailSceneRouterContract.swift in Sources */,
 				11AAC932297A6D1A00CBE460 /* MainSceneInteractorService.swift in Sources */,
 				11AAC965297AAA0900CBE460 /* Publisher + Subscriber.swift in Sources */,
 				71155DB829BF3F2A00E20AAF /* DetailScenePresenterContract.swift in Sources */,

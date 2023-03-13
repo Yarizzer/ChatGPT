@@ -15,6 +15,7 @@ protocol MainSceneViewModelType {
     func getMessageViewModel(with index: Int) -> MessageTableViewCellViewModelType?
     func sendMessage(with content: String)
     func clearChat()
+    func getMessageData(for index: Int) -> MessageModel?
 }
 
 class MainSceneViewModel {
@@ -56,6 +57,10 @@ extension MainSceneViewModel: MainSceneViewModelType {
     
     func clearChat() {
         AppCore.shared.databaseManager.clearChat()
+    }
+    
+    func getMessageData(for index: Int) -> MessageModel? {
+        return messages?[index]
     }
 }
 
