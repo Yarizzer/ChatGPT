@@ -10,6 +10,8 @@ protocol DetailSceneInteractorServiceType{
 	func updateVolume(with value: Float)
     func updatePitch(with value: Float)
     func updateRate(with value: Float)
+    func startTalk()
+    func silence()
 }
 
 class DetailSceneInteractorService {
@@ -31,5 +33,13 @@ extension DetailSceneInteractorService: DetailSceneInteractorServiceType {
     
     func updateRate(with value: Float) {
         model.updateRate(with: value)
+    }
+    
+    func startTalk() {
+        model.startTalk()
+    }
+    
+    func silence() {
+        model.silence()
     }
 }

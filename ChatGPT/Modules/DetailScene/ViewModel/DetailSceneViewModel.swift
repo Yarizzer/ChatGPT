@@ -12,6 +12,8 @@ protocol DetailSceneViewModelType {
     func updateVolume(with value: Float)
     func updatePitch(with value: Float)
     func updateRate(with value: Float)
+    func startTalk()
+    func silence()
 }
 
 class DetailSceneViewModel {
@@ -35,5 +37,13 @@ extension DetailSceneViewModel: DetailSceneViewModelType {
     
     func updateRate(with value: Float) {
         AppCore.shared.speechManager.setRate(with: value)
+    }
+    
+    func startTalk() {
+        AppCore.shared.speechManager.speak(with: data.content)
+    }
+    
+    func silence() {
+        AppCore.shared.speechManager.pause()
     }
 }

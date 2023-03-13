@@ -25,6 +25,8 @@ extension DetailSceneInteractor: DetailSceneInteractable {
         case .updateVolume(let value): service.updateVolume(with: value)
         case .updatePitch(let value): service.updatePitch(with: value)
         case .updateRate(let value): service.updateRate(with: value)
+        case .startTalk: service.startTalk()
+        case .silence: service.silence()
         case .dismiss:
             presenter.response(responseType: .releaseView)
             router.dismiss()

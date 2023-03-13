@@ -40,11 +40,11 @@ class DetailSceneViewController: BaseViewController<DetailSceneInteractable> {
     }
     
     @IBAction private func talkButtonAction(_ sender: UIButton) {
-        
+        interactor?.makeRequest(requestType: .startTalk)
     }
     
     @IBAction private func silenceButtonAction(_ sender: UIButton) {
-        
+        interactor?.makeRequest(requestType: .silence)
     }
     
     @IBOutlet private weak var topPaddingConstraint: NSLayoutConstraint!

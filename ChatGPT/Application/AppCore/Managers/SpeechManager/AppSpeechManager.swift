@@ -10,9 +10,9 @@ import Speech
 class AppSpeechManager {
     init() {
         self.synth = AVSpeechSynthesizer()
-        self.utterence = AVSpeechUtterance(string: Constants.initialDataValue)
-        self.utterence.rate = Constants.initialRateValue
-        self.utterence.voice = AVSpeechSynthesisVoice(language: Constants.voiceKey)
+        self.utterence = AVSpeechUtterance()
+        
+        utterence.voice = AVSpeechSynthesisVoice(language: Constants.voiceKey)
     }
     
     private let synth: AVSpeechSynthesizer
@@ -21,15 +21,15 @@ class AppSpeechManager {
 
 extension AppSpeechManager: AppSpeechManageable {
     func setRate(with value: Float) {
-        utterence.rate = value
+        //utterence.setRate(with: value)
     }
     
     func setVolume(with value: Float) {
-        utterence.volume = value
+        //utterence.volume.setVolume(with: value)
     }
     
     func setPitch(with multiplier: Float) {
-        utterence.pitchMultiplier = multiplier
+        //utterence.setPitch(with: multiplier)
     }
     
     func speak(with data: String) {
@@ -43,8 +43,6 @@ extension AppSpeechManager: AppSpeechManageable {
 
 extension AppSpeechManager {
     private struct Constants {
-        static let initialDataValue = ""
-        static let initialRateValue: Float = 0.5
         static let voiceKey = "ru-RU"
     }
 }

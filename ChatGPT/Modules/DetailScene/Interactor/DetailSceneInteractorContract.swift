@@ -16,6 +16,8 @@ struct DetailSceneInteractorRequest {
         case updateVolume(with: Float)
         case updatePitch(with: Float)
         case updateRate(with: Float)
+        case startTalk
+        case silence
         case dismiss
 	}
 }
