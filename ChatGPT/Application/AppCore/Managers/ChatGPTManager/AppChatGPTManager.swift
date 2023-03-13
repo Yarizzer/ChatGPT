@@ -30,7 +30,7 @@ extension AppChatGPTManager: AppChatGPTManageable {
             case .success(let response):
                 self?.output.value = self?.clean(response: response.choices.first?.text)
                 
-            case .failure(let error): writeLog(type: .error, message: "Failure to get response occured. Description \(error.localizedDescription)")
+            case .failure(let error): writeLog(type: .error, message: "Failure to get response occurred. Description \(error.localizedDescription)")
             }
         }
     }
